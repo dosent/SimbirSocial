@@ -1,0 +1,53 @@
+
+/**
+ * Task ACTIVITY_KIND.
+ * @author Simbirsoft team.
+ */
+entity Files  {
+	id Long,
+	name String required,
+	description String,
+    path String
+}
+
+/**
+ * Создание нового мероприятия
+ * Events
+ */
+
+entity Events  {
+	id Long,
+	name String required,
+	description String,
+    /* data DataTime Дата события*/
+    date LocalDate,
+    /* Кординаты */
+    latitude Double,
+    longitude Double,
+    /* строка на пользователя */
+    user String,
+    /* Статус опубликования */
+    pubish Publish
+	/* Категория события */
+    category Category
+}
+
+enum Publish {
+    PUBLIC, WRITE, INVISIBLE 
+}
+
+enum Category {
+    SPORT, CHARITY
+}
+
+relationship ManyToOne {
+	Files{idEvent} to Events
+}
+
+ 
+ 
+ 
+ 
+
+
+
