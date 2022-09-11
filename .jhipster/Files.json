@@ -1,0 +1,41 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909161848",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "files",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "path",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "Task ACTIVITY_KIND.\\n@author Simbirsoft team.",
+  "jpaMetamodelFiltering": false,
+  "name": "Files",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "events",
+      "otherEntityRelationshipName": "files",
+      "relationshipName": "idEvent",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

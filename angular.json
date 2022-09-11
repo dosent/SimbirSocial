@@ -30,12 +30,17 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/main/webapp/content",
               "src/main/webapp/favicon.ico",
               "src/main/webapp/manifest.webapp",
-              "src/main/webapp/robots.txt"
+              "src/main/webapp/robots.txt",
+              "src/main/webapp/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "assets/"
+              }
             ],
-            "styles": ["src/main/webapp/content/scss/vendor.scss", "src/main/webapp/content/scss/global.scss"],
+            "styles": ["./node_modules/leaflet/dist/leaflet.css", "src/main/webapp/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -100,6 +105,7 @@
   },
   "defaultProject": "simbir-social",
   "cli": {
+    "analytics": false,
     "cache": {
       "enabled": true,
       "path": "./target/angular/",

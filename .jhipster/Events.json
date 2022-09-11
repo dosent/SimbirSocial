@@ -1,0 +1,56 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909161849",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "events",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "user",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pubish",
+      "fieldType": "Publish",
+      "fieldValues": "PUBLIC,WRITE,INVISIBLE"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "Category",
+      "fieldValues": "SPORT,CHARITY"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "Создание нового мероприятия\\nEvents",
+  "jpaMetamodelFiltering": false,
+  "name": "Events",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

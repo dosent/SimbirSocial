@@ -1,0 +1,129 @@
+package com.simbirsoft.simbirsocial.domain;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serializable;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
+/**
+ * Task ACTIVITY_KIND.\n@author Simbirsoft team.
+ */
+@Schema(description = "Task ACTIVITY_KIND.\n@author Simbirsoft team.")
+@Entity
+@Table(name = "files")
+public class Files implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
+    @Column(name = "id")
+    private Long id;
+
+    @NotNull
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "path")
+    private String path;
+
+    @ManyToOne
+    private Events idEvent;
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public Files id(Long id) {
+        this.setId(id);
+        return this;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public Files name(String name) {
+        this.setName(name);
+        return this;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public Files description(String description) {
+        this.setDescription(description);
+        return this;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public Files path(String path) {
+        this.setPath(path);
+        return this;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public Events getIdEvent() {
+        return this.idEvent;
+    }
+
+    public void setIdEvent(Events events) {
+        this.idEvent = events;
+    }
+
+    public Files idEvent(Events events) {
+        this.setIdEvent(events);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Files)) {
+            return false;
+        }
+        return id != null && id.equals(((Files) o).id);
+    }
+
+    @Override
+    public int hashCode() {
+        // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+        return getClass().hashCode();
+    }
+
+    // prettier-ignore
+    @Override
+    public String toString() {
+        return "Files{" +
+            "id=" + getId() +
+            ", name='" + getName() + "'" +
+            ", description='" + getDescription() + "'" +
+            ", path='" + getPath() + "'" +
+            "}";
+    }
+}

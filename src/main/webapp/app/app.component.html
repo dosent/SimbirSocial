@@ -1,0 +1,39 @@
+<mat-toolbar class="header">
+  <img src="assets/ss-logo-symbol-blue-2.png" class="header-icon" />
+  <H1 class="header-text">SimbirSocial</H1>
+</mat-toolbar>
+<div class="container" *ngIf="stories.length > 0">
+  <jhi-osm-map [options]="map1Options" (map$)="receiveMap($event, 1)" (zoom$)="receiveZoom($event, 1)" id="map-1"></jhi-osm-map>
+</div>
+
+<!-- <leaflet-sidebar-control
+    [map]="map[1]"
+    [options]="sidebarOptions"
+></leaflet-sidebar-control> -->
+
+<!-- <div id="sidebar" class="leaflet-sidebar collapsed">
+  
+  <div class="leaflet-sidebar-tabs">
+    <ul role="tablist">
+      <li><a href="#leg" role="tab" ><i class="material-icons" data-toggle="tooltip" title="Map Legend">map</i></a></li>
+    </ul>
+    <ul role="tablist">
+      <li><a href="#settings" role="tab"><i class="fa fa-gear" data-toggle="tooltip" title="Settings"></i></a></li>
+    </ul>
+  </div>
+
+  
+  <div class="leaflet-sidebar-content">
+    <div class="leaflet-sidebar-pane" id="leg" style="height:90%;">
+      <h1 class="leaflet-sidebar-header">
+          <span class="leaflet-sidebar-close" ><i class="fa fa-caret-right"></i></span>
+          Map Legend
+      </h1>
+      <ng-template [ngIf]='showLegend'>
+        <iframe  class="h-100" id="legend" [src]="legendUrl"></iframe>
+      </ng-template>
+    </div>
+    <div class="leaflet-sidebar-pane" id="settings">
+    </div>
+  </div>
+</div> -->
